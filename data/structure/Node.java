@@ -31,7 +31,8 @@ public class Node<E> {
     }
 
     public String toString() {
-        return "Node={data={" + data + "},link={" + link + "}}";
+        //return "Node={data={" + data + "},link={" + link + "}}";
+        return "-> "+data+link;
     }
 
 }

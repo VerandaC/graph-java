@@ -59,6 +59,7 @@ public class ListLinked<E> {
     }
 
     public String toString() {
-        return "List={head={" + head + "},tail={" + tail + "},size={" + size + "}}";
+        //return "List={head={" + head + "},tail={" + tail + "},size={" + size + "}}";
+        return "->"+head;
     }
 }

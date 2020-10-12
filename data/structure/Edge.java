@@ -34,6 +34,7 @@ public class Edge {
     }
 
     public String toString() {
-        return "Edge={v1={" + v1.getLabel() + "},v2={" + v2.getLabel() + "},weight={" + weight + "}}";
+        //return "Edge={v1={" + v1.getLabel() + "},v2={" + v2.getLabel() + "},weight={" + weight + "}}";
+        return  "{"+v2.getLabel()+","+weight+"}";
     }
 }

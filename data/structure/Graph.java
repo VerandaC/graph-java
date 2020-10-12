@@ -54,9 +54,10 @@ public class Graph {
 
     public void printGraph() {
         for (int i = 0; i < vertexs.length; i++) {
-            //Vertex vertex = vertexs[i];
-            //ListLinked<Edge> eLinked = vertex.getEdges();
-            
+    
+           Vertex vertex = vertexs[i];
+            ListLinked<Edge> eLinked = vertex.getEdges();
+            System.out.println(i+" "+vertex.getLabel()+eLinked.getHead());
         }
     }
 
@@ -77,7 +78,7 @@ public class Graph {
             matcher = pattern.matcher(line);
             matcher.find();
             String strSize = matcher.group(1);
-            System.out.println(strSize);
+            //System.out.println(strSize);
 
             vertexs = new Vertex[Integer.parseInt(strSize)];
             // Obteniendo las lineas de informacion de vertices
@@ -95,7 +96,7 @@ public class Graph {
 
             // Obteniendo las lineas de informacion de aristas
             while (!(line = scanner.nextLine()).equals(";")) {
-                pattern = Pattern.compile("\\(\\s*(\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+)\\s*\\)");
+                pattern = Pattern.compile("\\(\\s*(\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+.*\\d*)\\s*\\)");
                 matcher = pattern.matcher(line);
                 if (matcher.find()) {
                     int posV1 = Integer.parseInt(matcher.group(1));
@@ -136,5 +137,6 @@ public class Graph {
         graph.addVertex(Riberalta);
 
         graph.readFileInput("bolivia.txt");
+        graph.printGraph();
     }
 }
